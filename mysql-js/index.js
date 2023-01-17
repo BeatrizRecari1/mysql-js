@@ -1,13 +1,10 @@
 // const mysql = require('mysql2);
 
-import mysql from 'mysql2'; // Import library of mysql tools
+import { createConnection } from 'mysql2'; // Import library of mysql tools
+import  { dbConnection } from "./secrets.js"; // Only one default (I also don't need one) // Always add .js in our files
 
-const db = mysql.createConnection({ // Connect and call connection "db"
-    host: "127.0.0.1",
-    database: "bocacode",
-    user: "root",
-    password: "test1234"
-})
+const db = createConnection(dbConnection) 
+
 
 console.log("we are connected")
 
